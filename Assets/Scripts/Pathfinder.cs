@@ -11,9 +11,17 @@ public class Pathfinder : MonoBehaviour {
 
     private void Awake() {
         agent = GetComponent<NavMeshAgent>();
+
+        GameManagerEvents.OnGameStateChanged += HandleGameStateChanged;
     }
 
-    private void Start() {
-        agent.destination = finish.position;
+    private void OnDestroy() {
+        GameManagerEvents.OnGameStateChanged -= HandleGameStateChanged;
+    }
+
+    private void HandleGameStateChanged(GameState state) {
+        if (state == GameState.PlayMode) {
+            agent.destination = finish.position;
+        }
     }
 }

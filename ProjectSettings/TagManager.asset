@@ -3,16 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Trap
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CinemachineConfiner
   - Water
   - UI
-  - 
-  - 
+  - Trap
+  - BuildLayer
   - 
   - 
   - 
@@ -38,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Hidden
+    uniqueID: 2934423985
+    locked: 0
   - name: Background
     uniqueID: 643358191
     locked: 0

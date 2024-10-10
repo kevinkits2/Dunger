@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bf6f87a83e82f4d8abd0576f30ce7a, type: 3}
+  m_Name: FlameTrap
+  m_EditorClassIdentifier: 
+  trapUISprite: {fileID: 2088835510, guid: 82caa00d2036a4a4281805fe42b4154e, type: 3}
+  trapMouseImage: {fileID: -96151435, guid: 82caa00d2036a4a4281805fe42b4154e, type: 3}
+  trapPrefab: {fileID: 2359732836154545132, guid: db766a04c71e4e24eb1602823e47f0d2, type: 3}
