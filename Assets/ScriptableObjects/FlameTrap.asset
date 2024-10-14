@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bf6f87a83e82f4d8abd0576f30ce7a, type: 3}
   m_Name: FlameTrap
   m_EditorClassIdentifier: 
-  trapUISprite: {fileID: 2088835510, guid: 82caa00d2036a4a4281805fe42b4154e, type: 3}
-  trapMouseImage: {fileID: -96151435, guid: 82caa00d2036a4a4281805fe42b4154e, type: 3}
+  trapUISprite: {fileID: 21300000, guid: 3d6abf6550137b04bb21732585901279, type: 3}
+  trapMouseImage: {fileID: 1289702189, guid: 18daf7b7cc329f445890f23681ce9c99, type: 3}
   trapPrefab: {fileID: 2359732836154545132, guid: db766a04c71e4e24eb1602823e47f0d2, type: 3}
+  animatorController: {fileID: 9100000, guid: ed66664f0e19cfe429f2a2e854a41ec1, type: 2}

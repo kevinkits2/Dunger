@@ -53,7 +53,6 @@ public class TrapBuilder : MonoBehaviour {
         if (selectedTrap != null && placementAvailable) {
             Instantiate(selectedTrap.trapPrefab, currentGridPos + tilePlacementOffset, Quaternion.identity);
             TrapBuilderEvents.BuildTrap();
-            selectedTrap = null;
         }
     }
 

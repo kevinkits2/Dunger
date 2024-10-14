@@ -28,8 +28,7 @@ public class Pathfinder : MonoBehaviour {
 
     private void HandleGameStateChanged(GameState state) {
         if (state == GameState.PlayMode && !finished) {
-            agent.destination = finish.position;
-            isMoving = true;
+            CalculatePath();   
         }
     }
 
@@ -39,6 +38,19 @@ public class Pathfinder : MonoBehaviour {
         FlipSprite();
         DestinationCheck();
         animator.SetBool(IS_MOVING, isMoving);
+    }
+
+    private void CalculatePath() {
+        NavMeshPath navMeshPath = new NavMeshPath();
+        agent.CalculatePath(finish.position, navMeshPath);
+
+        if (navMeshPath.status == NavMeshPathStatus.PathPartial) {
+            //cant reach
+        }
+        else {
+            agent.destination = finish.position;
+            isMoving = true;
+        }
     }
 
     private void DestinationCheck() {

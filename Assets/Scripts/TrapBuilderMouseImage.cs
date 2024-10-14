@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class TrapBuilderMouseImage : MonoBehaviour {
 
+    [SerializeField] private Animator animator;
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private Color unavailablePlacementColor;
 
@@ -15,30 +16,25 @@ public class TrapBuilderMouseImage : MonoBehaviour {
 
     private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         spriteRenderer.enabled = false;
     }
 
     private void Start() {
         UIManagerEvents.OnTrapButtonClicked += HandleTrapButtonClicked;
-        TrapBuilderEvents.OnTrapBuilt += HandleTrapBuilt;
         TrapBuilderEvents.OnTrapDeselected += HandleTrapDeselected;
     }
 
     private void OnDestroy() {
         UIManagerEvents.OnTrapButtonClicked -= HandleTrapButtonClicked;
-        TrapBuilderEvents.OnTrapBuilt -= HandleTrapBuilt;
         TrapBuilderEvents.OnTrapDeselected -= HandleTrapDeselected;
     }
 
     private void HandleTrapButtonClicked(TrapSO trapSO) {
         currenTrap = trapSO;
+        animator.runtimeAnimatorController = trapSO.animatorController;
         spriteRenderer.sprite = currenTrap.trapMouseImage;
         spriteRenderer.enabled = true;
-    }
-
-    private void HandleTrapBuilt() {
-        currenTrap = null;
-        spriteRenderer.enabled = false;
     }
 
     private void HandleTrapDeselected() {

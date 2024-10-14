@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SpikeTrap : Trap {
 
+    public override void Build() {
+        throw new System.NotImplementedException();
+    }
+
     public override void ActivateTrap() {
         trapEffectAnimator.SetTrigger(ACTIVATE_TRAP);
     }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bf6f87a83e82f4d8abd0576f30ce7a, type: 3}
   m_Name: SpikeTrap
   m_EditorClassIdentifier: 
-  trapUISprite: {fileID: 21300000, guid: f19d6c096514b8d4386c8a83eb95b486, type: 3}
-  trapMouseImage: {fileID: 21300000, guid: f19d6c096514b8d4386c8a83eb95b486, type: 3}
+  trapUISprite: {fileID: 21300000, guid: 35daf5c15a72f5e45acea923145a0a69, type: 3}
+  trapMouseImage: {fileID: 21300000, guid: 81a9fb26731953f43b1f9b2d45563ac2, type: 3}
   trapPrefab: {fileID: 5796337383125974860, guid: acc657d05ae47344fb81bab85e021947, type: 3}
+  animatorController: {fileID: 0}

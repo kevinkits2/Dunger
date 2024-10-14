@@ -12,9 +12,9 @@ public abstract class Trap : MonoBehaviour {
     [SerializeField] protected Animator trapEffectAnimator;
 
 
+    public abstract void Build();
     public abstract void ActivateTrap();
     public abstract void DisableTrap();
-
     public abstract void ActivateTrapEffect();
 
     protected virtual void OnTriggerEnter2D(Collider2D collision) {

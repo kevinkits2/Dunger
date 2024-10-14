@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FlameTrap : Trap {
 
+    public override void Build() {
+    
+    }
+
     public override void ActivateTrap() {
         trapAnimator.SetTrigger(ACTIVATE_TRAP);
     }
