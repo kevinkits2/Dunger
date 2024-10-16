@@ -64,6 +64,10 @@ public class GameUIManager : MonoBehaviour {
         });
     }
 
+    private void OnDestroy() {
+        InputManagerEvents.OnPausePerformed -= HandlePause;
+    }
+
     private void HandlePause() {
         if (isPaused) {
             Time.timeScale = 1.0f;
