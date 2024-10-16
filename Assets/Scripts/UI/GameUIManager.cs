@@ -25,40 +25,40 @@ public class GameUIManager : MonoBehaviour {
 
         //Resume the game from pause menu
         resumeButton.onClick.AddListener(() => {
-            //AudioPlayer.Instance.ButtonClicked();
+            AudioPlayer.Instance.ButtonClicked();
             HandlePause();
         });
 
         //Exit the game loop and go to the menu
         toMenuPauseButton.onClick.AddListener(() => {
-            //AudioPlayer.Instance.ButtonClicked();
+            AudioPlayer.Instance.ButtonClicked();
             Time.timeScale = 1.0f;
             SceneManager.LoadScene(0);
         });
 
         //Retry the current level button
         retryButton.onClick.AddListener(() => {
-            //AudioPlayer.Instance.ButtonClicked();
+            AudioPlayer.Instance.ButtonClicked();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         });
 
         //To menu from lose screen button
         toMenuLoseButton.onClick.AddListener(() => {
-            //AudioPlayer.Instance.ButtonClicked();
+            AudioPlayer.Instance.ButtonClicked();
             Time.timeScale = 1.0f;
             SceneManager.LoadScene(0);
         });
 
         //Load next level button
         nextButton.onClick.AddListener(() => {
-            //AudioPlayer.Instance.ButtonClicked();
+            AudioPlayer.Instance.ButtonClicked();
             Time.timeScale = 1.0f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         });
 
         //To menu from win screen button
         toMenuLoseButton.onClick.AddListener(() => {
-            //AudioPlayer.Instance.ButtonClicked();
+            AudioPlayer.Instance.ButtonClicked();
             Time.timeScale = 1.0f;
             SceneManager.LoadScene(0);
         });
