@@ -13,4 +13,8 @@ public static class InputManagerEvents {
 
     public static event Func<Vector2> OnCameraMovementVectorRequested;
     public static Vector2 RequestCameraMovementVector() => OnCameraMovementVectorRequested?.Invoke() ?? Vector2.zero;
+
+    public static event Action OnPausePerformed;
+
+    public static void PausePerformed() => OnPausePerformed?.Invoke();
 }

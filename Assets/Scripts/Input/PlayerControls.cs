@@ -111,6 +111,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OnPause"",
+                    ""type"": ""Button"",
+                    ""id"": ""9766dedf-4ae1-4dbd-a9ea-7839a397317e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -168,6 +177,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""MovementVector"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbe26d31-2765-4993-ad01-795e39908676"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OnPause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -184,6 +204,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Game
         m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
         m_Game_MovementVector = m_Game.FindAction("MovementVector", throwIfNotFound: true);
+        m_Game_OnPause = m_Game.FindAction("OnPause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -346,11 +367,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Game;
     private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
     private readonly InputAction m_Game_MovementVector;
+    private readonly InputAction m_Game_OnPause;
     public struct GameActions
     {
         private @PlayerControls m_Wrapper;
         public GameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @MovementVector => m_Wrapper.m_Game_MovementVector;
+        public InputAction @OnPause => m_Wrapper.m_Game_OnPause;
         public InputActionMap Get() { return m_Wrapper.m_Game; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -363,6 +386,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @MovementVector.started += instance.OnMovementVector;
             @MovementVector.performed += instance.OnMovementVector;
             @MovementVector.canceled += instance.OnMovementVector;
+            @OnPause.started += instance.OnOnPause;
+            @OnPause.performed += instance.OnOnPause;
+            @OnPause.canceled += instance.OnOnPause;
         }
 
         private void UnregisterCallbacks(IGameActions instance)
@@ -370,6 +396,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @MovementVector.started -= instance.OnMovementVector;
             @MovementVector.performed -= instance.OnMovementVector;
             @MovementVector.canceled -= instance.OnMovementVector;
+            @OnPause.started -= instance.OnOnPause;
+            @OnPause.performed -= instance.OnOnPause;
+            @OnPause.canceled -= instance.OnOnPause;
         }
 
         public void RemoveCallbacks(IGameActions instance)
@@ -399,5 +428,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IGameActions
     {
         void OnMovementVector(InputAction.CallbackContext context);
+        void OnOnPause(InputAction.CallbackContext context);
     }
 }

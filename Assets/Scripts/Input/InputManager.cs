@@ -18,6 +18,7 @@ public class InputManager : MonoBehaviour {
 
         playerControls.BuildMode.Select.performed += HandleSelectPerformed;
         playerControls.BuildMode.Deselect.performed += HandleDeselectPerformed;
+        playerControls.Game.OnPause.performed += HandlePausePerformed;
     }
 
     private void OnDestroy() {
@@ -43,6 +44,10 @@ public class InputManager : MonoBehaviour {
         if (currentGameState != GameState.BuildingMode) return;
 
         InputManagerEvents.BuildModeSelectPerformed();
+    }
+
+    private void HandlePausePerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+        InputManagerEvents.PausePerformed();
     }
 
     private void GetCameraMoveVector() {
